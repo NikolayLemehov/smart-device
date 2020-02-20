@@ -28,14 +28,10 @@
   color: #ffffff;
 }
 
-.main-nav__mail a::before {
-  content: "";
+.main-nav__mail a svg {
   position: absolute;
   left: 0;
   top: 2px;
-  width: 19px;
-  height: 14px;
-  background: url("#{$prefix-css-img}/icon-envelop.svg") no-repeat 0 0;
 }
 
 .main-nav__phone {
@@ -55,14 +51,10 @@
   color: #ffffff;
 }
 
-.main-nav__phone a::before {
-  content: "";
+.main-nav__phone a svg {
   position: absolute;
   left: 0;
   top: 0;
-  width: 18px;
-  height: 18px;
-  background: url("#{$prefix-css-img}/icon-phone-call.svg") no-repeat 0 0;
 }
 
 .main-nav__recall {
