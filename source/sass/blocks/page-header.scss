@@ -1,0 +1,16 @@
+.page-header {
+  position: relative;
+  background-color: $color-dark;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -210px;
+  width: 2249px;
+  height: 1169.13px;
+  background: $color-dark url("#{$prefix-css-img}top-bg.png") no-repeat 0 0;
+  opacity: 0.2;
+}
