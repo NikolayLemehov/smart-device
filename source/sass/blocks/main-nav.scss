@@ -27,6 +27,14 @@
   color: #ffffff;
 }
 
+.main-nav__mail a:hover {
+  opacity: 0.6;
+}
+
+.main-nav__mail a:active {
+  opacity: 0.3;
+}
+
 .main-nav__mail a svg {
   position: absolute;
   left: 0;
@@ -48,6 +56,14 @@
   line-height: 18px;
   text-decoration: none;
   color: #ffffff;
+}
+
+.main-nav__phone a:hover {
+  opacity: 0.6;
+}
+
+.main-nav__phone a:active {
+  opacity: 0.3;
 }
 
 .main-nav__phone a svg {
@@ -76,4 +92,12 @@
   color: #ffffff;
   border: 1px solid #ffffff;
   border-radius: 5px;
+}
+
+.main-nav__recall a:hover {
+  opacity: 0.6;
+}
+
+.main-nav__recall a:active {
+  opacity: 0.3;
 }
