@@ -19,6 +19,9 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: $color-dark url("#{$prefix-css-img}top-bg.png") no-repeat 0 0;
+  background: $color-dark url("#{$prefix-css-img}top-bg@1x.jpg") no-repeat 0 0;
+
+  @include bg-retina("top-bg@2x.jpg");
+  background-size: cover;
   opacity: 0.2;
 }
