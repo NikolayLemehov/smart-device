@@ -2,6 +2,14 @@
   display: flex;
 }
 
+.logo:not(.logo--main-page):hover {
+  opacity: 0.6;
+}
+
+.logo:not(.logo--main-page):active {
+  opacity: 0.3;
+}
+
 .logo__wrap-img img {
   display: block;
 }
