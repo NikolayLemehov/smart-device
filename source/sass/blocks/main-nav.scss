@@ -6,6 +6,7 @@
 
 .main-nav__inner {
   display: flex;
+  flex-wrap: wrap;
   width: $desktop-width;
   padding: 0 8px 0 21px;
 }
