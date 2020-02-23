@@ -1,0 +1,22 @@
+// временно, для perfect-pixel
+.advantage {
+  display: flex;
+  justify-content: center;
+}
+
+.advantage h2 {
+  margin: 0;
+}
+
+.advantage__inner {
+  width: $tablet-container-width;
+  height: 900px;
+  color: #ffffff;
+  background-color: #1b2931;
+}
+
+@media (max-width: $tablet-width - 1) {
+  .advantage__inner {
+    width: $mobile-width;
+  }
+}
