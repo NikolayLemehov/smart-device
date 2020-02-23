@@ -19,7 +19,6 @@
 
 .main-nav__mail a {
   position: relative;
-  padding-left: 39px;
   font-family: "PT Mono", "Arial", sans-serif;
   font-weight: normal;
   font-size: 16px;
@@ -42,6 +41,10 @@
   top: 2px;
 }
 
+.main-nav__mail a span {
+  padding-left: 39px;
+}
+
 .main-nav__phone {
   align-self: flex-start;
   margin-top: 17px;
@@ -50,7 +53,6 @@
 
 .main-nav__phone a {
   position: relative;
-  padding-left: 34px;
   font-family: "PT Mono", "Arial", sans-serif;
   font-weight: normal;
   font-size: 16px;
@@ -71,6 +73,10 @@
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.main-nav__phone a span {
+  padding-left: 34px;
 }
 
 .main-nav__recall {
@@ -106,15 +112,14 @@
 @media (max-width: $desktop-width - 1) {
   @mixin tablet {
     a {
-      padding-left: 0;
-
       svg {
-        position: static;
+        position: relative;
         display: block;
       }
 
       span {
         @include visually-hidden;
+        padding-left: 0;
       }
     }
   }

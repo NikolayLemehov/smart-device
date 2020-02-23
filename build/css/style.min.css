@@ -406,7 +406,6 @@ input[type="radio"].visually-hidden {
 
 .main-nav__mail a {
   position: relative;
-  padding-left: 39px;
   font-family: "PT Mono", "Arial", sans-serif;
   font-weight: normal;
   font-size: 16px;
@@ -425,6 +424,9 @@ input[type="radio"].visually-hidden {
   left: 0;
   top: 2px; }
 
+.main-nav__mail a span {
+  padding-left: 39px; }
+
 .main-nav__phone {
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -433,7 +435,6 @@ input[type="radio"].visually-hidden {
 
 .main-nav__phone a {
   position: relative;
-  padding-left: 34px;
   font-family: "PT Mono", "Arial", sans-serif;
   font-weight: normal;
   font-size: 16px;
@@ -451,6 +452,9 @@ input[type="radio"].visually-hidden {
   position: absolute;
   left: 0;
   top: 0; }
+
+.main-nav__phone a span {
+  padding-left: 34px; }
 
 .main-nav__recall {
   display: -webkit-box;
@@ -489,23 +493,22 @@ input[type="radio"].visually-hidden {
     padding: 0 25px 0 25px; }
   .main-nav__mail {
     margin-top: 15px; }
-    .main-nav__mail a {
+    .main-nav__mail a svg {
+      position: relative;
+      display: block; }
+    .main-nav__mail a span {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      -webkit-clip-path: inset(100%);
+              clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
       padding-left: 0; }
-      .main-nav__mail a svg {
-        position: static;
-        display: block; }
-      .main-nav__mail a span {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        border: 0;
-        padding: 0;
-        white-space: nowrap;
-        -webkit-clip-path: inset(100%);
-                clip-path: inset(100%);
-        clip: rect(0 0 0 0);
-        overflow: hidden; }
   .main-nav__mail a {
     padding-left: 0; }
   .main-nav__mail a svg {
@@ -514,23 +517,22 @@ input[type="radio"].visually-hidden {
   .main-nav__phone {
     margin-top: 12px;
     margin-left: 34px; }
-    .main-nav__phone a {
+    .main-nav__phone a svg {
+      position: relative;
+      display: block; }
+    .main-nav__phone a span {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      -webkit-clip-path: inset(100%);
+              clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
       padding-left: 0; }
-      .main-nav__phone a svg {
-        position: static;
-        display: block; }
-      .main-nav__phone a span {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        border: 0;
-        padding: 0;
-        white-space: nowrap;
-        -webkit-clip-path: inset(100%);
-                clip-path: inset(100%);
-        clip: rect(0 0 0 0);
-        overflow: hidden; }
   .main-nav__phone a svg {
     width: 24px;
     height: 24px; }
