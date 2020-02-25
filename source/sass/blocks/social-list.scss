@@ -1,0 +1,14 @@
+.social-list {
+  list-style: none;
+  display: flex;
+  margin: 0; // временно
+  padding: 0;
+}
+
+.social-list svg {
+  display: block;
+}
+
+.social-list li {
+  margin-right: 15px;
+}

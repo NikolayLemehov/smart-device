@@ -1,0 +1,130 @@
+@media (min-width: 0) {
+  @mixin pt-mono-low-case-font {
+    font-family: "PT Mono", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 25px;
+    color: $color-dark;
+    opacity: 0.5;
+  }
+
+  @mixin pt-mono-upper-case-font {
+    font-family: "PT Mono", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $color-dark;
+    opacity: 0.5;
+  }
+
+  .page-footer {
+    display: flex;
+    justify-content: center;
+    min-height: 318px;
+    margin-top: auto;
+    padding-top: 65px;
+    background-color: hsla(60, 100%, 50%, 0.05);
+  }
+
+  .page-footer h3 {
+    margin: 0 0 25px 0;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-dark;
+  }
+
+  .page-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    width: $desktop-container-width;
+    padding-left: 20px;
+  }
+
+  .page-footer__primary {
+    width: 425px;
+  }
+
+  .page-footer__primary > p {
+    display: none;
+  }
+
+  .page-footer__logo {
+    margin-bottom: 54px;
+  }
+
+  .page-footer__menu {
+    //width: 308px * 2; // временно
+  }
+
+  .page-footer__menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    //width: 653px;
+    height: 100px;
+    border: 1px solid red;
+  }
+
+  .page-footer__menu li {
+    //width: 308px;
+    //padding-right: 30px;
+    border: 1px solid red;
+  }
+
+  .page-footer__menu a {
+    @include pt-mono-low-case-font;
+    text-decoration: none;
+  }
+
+  .page-footer__our-contacts {
+    //width: 335px;
+  }
+
+  .page-footer__our-contacts address {
+    @include pt-mono-low-case-font;
+  }
+
+  .page-footer__our-contacts a {
+    text-decoration: none;
+    color: $color-dark;
+  }
+
+  .page-footer__copyright {
+    display: flex;
+  }
+
+  .page-footer__copyright p {
+    @include pt-mono-upper-case-font;
+  }
+
+  .page-footer__terms a {
+    @include pt-mono-upper-case-font;
+    text-decoration: none;
+  }
+
+  .page-footer__development a {
+    @include pt-mono-upper-case-font;
+    text-decoration: none;
+  }
+
+  //@media (max-width: $desktop-width - 1) {
+  //  .page-footer__menu ul {
+  //    flex-direction: column;
+  //  }
+  //
+  //  .page-footer__menu li:nth-child(2n) {
+  //    order: 100;
+  //  }
+  //}
+}
+
