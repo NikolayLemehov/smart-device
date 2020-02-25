@@ -1,17 +1,17 @@
 @media (min-width: 0) {
   $left-indent: 97px;
+  $column-width: 750px;
 
   .main-screen {
-    position: relative;
     display: flex;
     justify-content: center;
-    padding: 200px 0 275px 0;
+    padding: 0;
+    overflow: hidden;
   }
 
   .main-screen__bg {
-    $width: $desktop-container-width;
     position: absolute;
-    left: calc(50% - #{$width} / 2 + 806px);
+    left: 806px;
     top: 143px;
     width: 705px;
     height: 515px;
@@ -40,9 +40,8 @@
   }
 
   .main-screen__scroll-down {
-    $width: $desktop-container-width;
     position: absolute;
-    left: calc(50% - #{$width} / 2 + 37px);
+    left: 37px;
     bottom: 89px;
     font-family: "PT Mono", "Arial", sans-serif;
     font-weight: normal;
@@ -67,14 +66,16 @@
   }
 
   .main-screen__inner {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: $desktop-container-width;
-    padding: 0 640px 0 18px;
+    padding: 200px 18px 275px 18px;
   }
 
   .main-screen__inner h1 {
+    max-width: $column-width;
     margin: 0 0 27px 0;
     font-weight: bold;
     font-size: 80px;
@@ -86,6 +87,7 @@
 
   .main-screen__inner p {
     position: relative;
+    max-width: $column-width;
     margin: 0 0 44px 0;
     padding-left: $left-indent;
     font-family: "PT Mono", "Arial", sans-serif;
@@ -105,8 +107,9 @@
     background-color: #ffffff;
   }
 
-  .main-screen__inner a {
+  .main-screen__inner > a {
     display: block;
+    max-width: $column-width - $left-indent;
     min-height: 55px;
     margin-left: $left-indent;
     padding: 17px 46px 17px 45px;
@@ -121,11 +124,11 @@
     border-radius: 5px;
   }
 
-  .main-screen__inner a:hover {
+  .main-screen__inner > a:hover {
     opacity: 0.6;
   }
 
-  .main-screen__inner a:active {
+  .main-screen__inner > a:active {
     opacity: 0.3;
   }
 }
