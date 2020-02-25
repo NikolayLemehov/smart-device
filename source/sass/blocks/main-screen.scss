@@ -5,7 +5,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    padding: 200px 0 200px 0;
+    padding: 200px 0 275px 0;
   }
 
   .main-screen__bg {
@@ -15,15 +15,55 @@
     top: 143px;
     width: 705px;
     height: 515px;
-    background: url("#{$prefix-css-img}motherboard@1x.png") 0 0 no-repeat,
-      url("#{$prefix-css-img}ellipse.svg") 339px 490px no-repeat,
+    background: url("#{$prefix-css-img}motherboard@1x.png") 0 0 no-repeat;
+
+    @include bg-retina("motherboard@2x.png");
+    background-size: 705px 515px;
+  }
+
+  .main-screen__bg::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url("#{$prefix-css-img}ellipse.svg") 339px 490px no-repeat,
       url("#{$prefix-css-img}ellipse.svg") 174px 491px no-repeat,
       url("#{$prefix-css-img}ellipse.svg") 13px 213px no-repeat,
       url("#{$prefix-css-img}ellipse.svg") 614px 14px no-repeat,
       url("#{$prefix-css-img}ellipse.svg") 64px 14px no-repeat,
       url("#{$prefix-css-img}triangle.svg") 16px 217px no-repeat,
       url("#{$prefix-css-img}triangle-big.svg") 68px 19px no-repeat;
-    background-size: 705px 515px, 10px 10px, 10px 10px, 10px 10px, 10px 10px, 10px 10px, 325px 280px, 552px 478px;
+    background-size: 10px 10px, 10px 10px, 10px 10px, 10px 10px, 10px 10px, 325px 280px, 552px 478px;
+  }
+
+  .main-screen__scroll-down {
+    $width: $desktop-container-width;
+    position: absolute;
+    left: calc(50% - #{$width} / 2 + 37px);
+    bottom: 89px;
+    font-family: "PT Mono", "Arial", sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+  }
+
+  .main-screen__scroll-down a {
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 0.5;
+  }
+
+  .main-screen__scroll-down a:hover {
+    opacity: 0.3;
+  }
+
+  .main-screen__scroll-down a:active {
+    opacity: 0.1;
   }
 
   .main-screen__inner {
@@ -73,13 +113,20 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
-    //text-align: center;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     text-decoration: none;
     color: #ffffff;
     background: #00b2ff;
     border-radius: 5px;
+  }
+
+  .main-screen__inner a:hover {
+    opacity: 0.6;
+  }
+
+  .main-screen__inner a:active {
+    opacity: 0.3;
   }
 }
 
