@@ -1,0 +1,66 @@
+@media (min-width: 0) {
+  .main-screen {
+    display: flex;
+    justify-content: center;
+    padding: 200px 0 30px 0;
+  }
+
+  .main-screen__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: $desktop-container-width;
+    padding: 0 640px 0 18px;
+  }
+
+  .main-screen__inner h1 {
+    margin: 0 0 27px 0;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 94px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  $left-indent: 97px;
+
+  .main-screen__inner p {
+    position: relative;
+    margin: 0 0 44px 0;
+    padding-left: $left-indent;
+    font-family: "PT Mono", "Arial", sans-serif;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 34px;
+    color: #ffffff;
+  }
+
+  .main-screen__inner p::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 17px;
+    width: 66px;
+    height: 2px;
+    background-color: #ffffff;
+  }
+
+  .main-screen__inner a {
+    display: block;
+    min-height: 55px;
+    margin-left: $left-indent;
+    padding: 17px 46px 17px 45px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    //text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    background: #00b2ff;
+    border-radius: 5px;
+  }
+}
+
