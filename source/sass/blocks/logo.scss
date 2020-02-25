@@ -1,5 +1,11 @@
 .logo {
   display: flex;
+  text-decoration: none;
+  color: #ffffff;
+
+  &--footer {
+    color: #203c42;
+  }
 }
 
 .logo:not(.logo--main-page):hover {
@@ -23,7 +29,6 @@
   font-weight: bold;
   font-size: 25px;
   line-height: 29px;
-  color: #ffffff;
 }
 
 .logo__text-small {
