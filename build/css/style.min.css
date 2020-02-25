@@ -602,13 +602,22 @@ input[type="radio"].visually-hidden {
 
 @media (min-width: 0) {
   .main-screen {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding: 200px 0 30px 0; }
+    padding: 200px 0 200px 0; }
+  .main-screen__bg {
+    position: absolute;
+    left: calc(50% - 1440px / 2 + 806px);
+    top: 143px;
+    width: 705px;
+    height: 515px;
+    background: url("../img/motherboard@1x.png") 0 0 no-repeat, url("../img/ellipse.svg") 339px 490px no-repeat, url("../img/ellipse.svg") 174px 491px no-repeat, url("../img/ellipse.svg") 13px 213px no-repeat, url("../img/ellipse.svg") 614px 14px no-repeat, url("../img/ellipse.svg") 64px 14px no-repeat, url("../img/triangle.svg") 16px 217px no-repeat, url("../img/triangle-big.svg") 68px 19px no-repeat;
+    background-size: 705px 515px, 10px 10px, 10px 10px, 10px 10px, 10px 10px, 10px 10px, 325px 280px, 552px 478px; }
   .main-screen__inner {
     display: -webkit-box;
     display: -ms-flexbox;
