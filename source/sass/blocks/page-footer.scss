@@ -1,4 +1,8 @@
 @media (min-width: 0) {
+  $columnWidth: 250px;
+  $columnCount: 2;
+  $gap: 57px;
+
   @mixin pt-mono-low-case-font {
     font-family: "PT Mono", "Arial", sans-serif;
     font-style: normal;
@@ -28,6 +32,7 @@
     margin-top: auto;
     padding-top: 65px;
     background-color: hsla(60, 100%, 50%, 0.05);
+    overflow: hidden;
   }
 
   .page-footer h3 {
@@ -48,7 +53,24 @@
   }
 
   .page-footer__primary {
+    position: relative;
     width: 425px;
+    min-height: 200px;
+  }
+
+  .page-footer__primary::after,
+  .page-footer__primary::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 1px;
+    background-color: hsla(120, 3%, 40%, 0.2);
+  }
+
+  .page-footer__primary::before {
+    transform: translate(-100%, 0);
   }
 
   .page-footer__primary > p {
@@ -60,34 +82,26 @@
   }
 
   .page-footer__menu {
-    //width: 308px * 2; // временно
+    width: $columnWidth * $columnCount + $gap;
+    margin-right: 99px;
   }
 
   .page-footer__menu ul {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0;
+    column-count: $columnCount;
+    column-gap: $gap;
+    margin: 0 0 0 -2px;
     padding: 0;
-    //width: 653px;
-    height: 100px;
-    border: 1px solid red;
   }
 
   .page-footer__menu li {
-    //width: 308px;
-    //padding-right: 30px;
-    border: 1px solid red;
+    display: inline-block;
+    width: $columnWidth;
   }
 
   .page-footer__menu a {
     @include pt-mono-low-case-font;
     text-decoration: none;
-  }
-
-  .page-footer__our-contacts {
-    //width: 335px;
   }
 
   .page-footer__our-contacts address {
@@ -101,10 +115,26 @@
 
   .page-footer__copyright {
     display: flex;
+    margin-right: 142px;
   }
 
   .page-footer__copyright p {
     @include pt-mono-upper-case-font;
+    margin-top: 14px;
+  }
+
+  .page-footer__copyright p:first-child {
+    margin-right: 75px;
+  }
+
+  .page-footer__container {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .page-footer__container p {
+    margin-top: 14px;
   }
 
   .page-footer__terms a {
@@ -112,19 +142,13 @@
     text-decoration: none;
   }
 
+  .page-footer__development {
+    margin-right: 7px;
+  }
+
   .page-footer__development a {
     @include pt-mono-upper-case-font;
     text-decoration: none;
   }
-
-  //@media (max-width: $desktop-width - 1) {
-  //  .page-footer__menu ul {
-  //    flex-direction: column;
-  //  }
-  //
-  //  .page-footer__menu li:nth-child(2n) {
-  //    order: 100;
-  //  }
-  //}
 }
 
