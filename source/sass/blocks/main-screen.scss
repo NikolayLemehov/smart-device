@@ -3,40 +3,33 @@
   $column-width: 750px;
 
   .main-screen {
+    position: relative;
     display: flex;
     justify-content: center;
     padding: 0;
-    overflow: hidden;
   }
 
   .main-screen__bg {
-    position: absolute;
-    left: 806px;
-    top: 143px;
-    width: 705px;
-    height: 515px;
-    background: url("#{$prefix-css-img}motherboard@1x.png") 0 0 no-repeat;
-
-    @include bg-retina("motherboard@2x.png");
-    background-size: 705px 515px;
-  }
-
-  .main-screen__bg::after {
-    content: "";
+    $width: $desktop-container-width;
     position: absolute;
     z-index: -1;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    background: url("#{$prefix-css-img}ellipse.svg") 339px 490px no-repeat,
-      url("#{$prefix-css-img}ellipse.svg") 174px 491px no-repeat,
-      url("#{$prefix-css-img}ellipse.svg") 13px 213px no-repeat,
-      url("#{$prefix-css-img}ellipse.svg") 614px 14px no-repeat,
-      url("#{$prefix-css-img}ellipse.svg") 64px 14px no-repeat,
-      url("#{$prefix-css-img}triangle.svg") 16px 217px no-repeat,
-      url("#{$prefix-css-img}triangle-big.svg") 68px 19px no-repeat;
-    background-size: 10px 10px, 10px 10px, 10px 10px, 10px 10px, 10px 10px, 325px 280px, 552px 478px;
+    background: url("#{$prefix-css-img}motherboard@1x.png") calc((100vw - #{$width}) / 2 + 798px) 143px no-repeat,
+      url("#{$prefix-css-img}triangles-desktop.svg") calc((100vw - #{$width}) / 2 + 790px) 3px no-repeat;
+
+    @media (max-width: $desktop-container-width - 1) {
+      background: url("#{$prefix-css-img}motherboard@1x.png") 798px 143px no-repeat,
+        url("#{$prefix-css-img}triangles-desktop.svg") 790px 3px no-repeat;
+    }
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("#{$prefix-css-img}motherboard@2x.png"),
+        url("#{$prefix-css-img}triangles-desktop.svg");
+    }
+    background-size: 705px 515px, 671px 641px;
   }
 
   .main-screen__scroll-down {
@@ -131,5 +124,125 @@
   .main-screen__inner > a:active {
     opacity: 0.3;
   }
-}
 
+  @media (max-width: $desktop-width - 1) {
+    $left-indent: 51px;
+    $column-width: 410px;
+
+    .main-screen__bg {
+      $width: $tablet-container-width;
+      $x1: 502px;
+      $y1: 43px;
+      $x2: 432px;
+      $y2: -55px;
+      top: -32px;
+      background: url("#{$prefix-css-img}motherboard-tablet@1x.png") calc((100vw - #{$width}) / 2 + #{$x1}) $y1 no-repeat,
+        url("#{$prefix-css-img}triangles-tablet.svg") calc((100vw - #{$width}) / 2 + #{$x2}) $y2 no-repeat;
+
+      @media (max-width: $tablet-container-width - 1) {
+        background: url("#{$prefix-css-img}motherboard-tablet@1x.png") $x1 $y1 no-repeat,
+          url("#{$prefix-css-img}triangles-tablet.svg") $x2 $y2 no-repeat;
+      }
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("#{$prefix-css-img}motherboard@2x.png"),
+          url("#{$prefix-css-img}triangles-tablet.svg");
+      }
+      background-size: 465px 340px, 529px 451px;
+    }
+
+    .main-screen__scroll-down {
+      display: none;
+    }
+
+    .main-screen__inner {
+      width: $tablet-container-width;
+      padding: 86px 18px 163px 88px;
+    }
+
+    .main-screen__inner h1 {
+      max-width: $column-width;
+      margin: 0 0 29px 0;
+      font-size: 60px;
+      line-height: 70px;
+    }
+
+    .main-screen__inner p {
+      max-width: $column-width;
+      margin: 0 0 55px 0;
+      padding-left: $left-indent;
+      font-size: 18px;
+      line-height: 156.8%;
+    }
+
+    .main-screen__inner p::before {
+      top: 16px;
+      width: 33px;
+    }
+
+    .main-screen__inner > a {
+      max-width: 379px;
+      margin-left: $left-indent;
+      padding: 17px 31px 17px 31px;
+    }
+  }
+
+  @media (max-width: $tablet-width - 1) {
+    .main-screen__bg {
+      $width: $tablet-width;
+      background: url("#{$prefix-css-img}motherboard-mobile@1x.png") calc((100vw - #{$width}) / 2 + 250px) 39px no-repeat,
+        url("#{$prefix-css-img}triangles-mobile.svg") calc((100vw - #{$width}) / 2 + 376px) -99px no-repeat;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("#{$prefix-css-img}motherboard@2x.png"),
+          url("#{$prefix-css-img}triangles-mobile.svg");
+      }
+      background-size: 301px 220px, 506px 483px;
+    }
+
+    .main-screen__inner {
+      width: $mobile-width;
+      padding: 201px 15px 163px 15px;
+    }
+
+    .main-screen__inner h1 {
+      margin: 0 0 27px 0;
+      font-size: 40px;
+      line-height: 47px;
+    }
+
+    .main-screen__inner p {
+      max-width: none;
+      margin: 0 0 40px 0;
+      padding-left: $left-indent;
+      font-size: 16px;
+      line-height: 158%;
+    }
+
+    .main-screen__inner p::before {
+      top: 15px;
+    }
+
+    .main-screen__inner > a {
+      $ml: 3px;
+      position: relative;
+      max-width: none;
+      width: calc(100% - #{$ml});
+      margin-left: $ml;
+    }
+
+    .main-screen__inner > a::before {
+      content: "Бесплатная консультация";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 17px 31px 17px 31px;
+      text-align: center;
+    }
+
+    .main-screen__inner > a span {
+      @include visually-hidden;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -602,37 +603,31 @@ input[type="radio"].visually-hidden {
 
 @media (min-width: 0) {
   .main-screen {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding: 0;
-    overflow: hidden; }
+    padding: 0; }
   .main-screen__bg {
-    position: absolute;
-    left: 806px;
-    top: 143px;
-    width: 705px;
-    height: 515px;
-    background: url("../img/motherboard@1x.png") 0 0 no-repeat;
-    background-size: 705px 515px; } }
-  @media (min-width: 0) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (min-resolution: 144dpi), (min-width: 0) and (min-resolution: 1.5dppx) {
-    .main-screen__bg {
-      background-image: url("../img/motherboard@2x.png"); } }
-
-@media (min-width: 0) {
-  .main-screen__bg::after {
-    content: "";
     position: absolute;
     z-index: -1;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    background: url("../img/ellipse.svg") 339px 490px no-repeat, url("../img/ellipse.svg") 174px 491px no-repeat, url("../img/ellipse.svg") 13px 213px no-repeat, url("../img/ellipse.svg") 614px 14px no-repeat, url("../img/ellipse.svg") 64px 14px no-repeat, url("../img/triangle.svg") 16px 217px no-repeat, url("../img/triangle-big.svg") 68px 19px no-repeat;
-    background-size: 10px 10px, 10px 10px, 10px 10px, 10px 10px, 10px 10px, 325px 280px, 552px 478px; }
+    background: url("../img/motherboard@1x.png") calc((100vw - 1440px) / 2 + 798px) 143px no-repeat, url("../img/triangles-desktop.svg") calc((100vw - 1440px) / 2 + 790px) 3px no-repeat;
+    background-size: 705px 515px, 671px 641px; } }
+  @media (min-width: 0) and (max-width: 1439px) {
+    .main-screen__bg {
+      background: url("../img/motherboard@1x.png") 798px 143px no-repeat, url("../img/triangles-desktop.svg") 790px 3px no-repeat; } }
+  @media (min-width: 0) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (min-resolution: 144dpi), (min-width: 0) and (min-resolution: 1.5dppx) {
+    .main-screen__bg {
+      background-image: url("../img/motherboard@2x.png"), url("../img/triangles-desktop.svg"); } }
+
+@media (min-width: 0) {
   .main-screen__scroll-down {
     position: absolute;
     left: 37px;
@@ -713,6 +708,93 @@ input[type="radio"].visually-hidden {
     opacity: 0.6; }
   .main-screen__inner > a:active {
     opacity: 0.3; } }
+
+@media (min-width: 0) and (max-width: 1023px) {
+  .main-screen__bg {
+    top: -32px;
+    background: url("../img/motherboard-tablet@1x.png") calc((100vw - 770px) / 2 + 502px) 43px no-repeat, url("../img/triangles-tablet.svg") calc((100vw - 770px) / 2 + 432px) -55px no-repeat;
+    background-size: 465px 340px, 529px 451px; } }
+  @media (min-width: 0) and (max-width: 1023px) and (max-width: 769px) {
+    .main-screen__bg {
+      background: url("../img/motherboard-tablet@1x.png") 502px 43px no-repeat, url("../img/triangles-tablet.svg") 432px -55px no-repeat; } }
+  @media (min-width: 0) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (max-width: 1023px) and (min-resolution: 144dpi), (min-width: 0) and (max-width: 1023px) and (min-resolution: 1.5dppx) {
+    .main-screen__bg {
+      background-image: url("../img/motherboard@2x.png"), url("../img/triangles-tablet.svg"); } }
+
+@media (min-width: 0) and (max-width: 1023px) {
+  .main-screen__scroll-down {
+    display: none; }
+  .main-screen__inner {
+    width: 770px;
+    padding: 86px 18px 163px 88px; }
+  .main-screen__inner h1 {
+    max-width: 410px;
+    margin: 0 0 29px 0;
+    font-size: 60px;
+    line-height: 70px; }
+  .main-screen__inner p {
+    max-width: 410px;
+    margin: 0 0 55px 0;
+    padding-left: 51px;
+    font-size: 18px;
+    line-height: 156.8%; }
+  .main-screen__inner p::before {
+    top: 16px;
+    width: 33px; }
+  .main-screen__inner > a {
+    max-width: 379px;
+    margin-left: 51px;
+    padding: 17px 31px 17px 31px; } }
+
+@media (min-width: 0) and (max-width: 767px) {
+  .main-screen__bg {
+    background: url("../img/motherboard-mobile@1x.png") calc((100vw - 768px) / 2 + 250px) 39px no-repeat, url("../img/triangles-mobile.svg") calc((100vw - 768px) / 2 + 376px) -99px no-repeat;
+    background-size: 301px 220px, 506px 483px; } }
+  @media (min-width: 0) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (max-width: 767px) and (min-resolution: 144dpi), (min-width: 0) and (max-width: 767px) and (min-resolution: 1.5dppx) {
+    .main-screen__bg {
+      background-image: url("../img/motherboard@2x.png"), url("../img/triangles-mobile.svg"); } }
+
+@media (min-width: 0) and (max-width: 767px) {
+  .main-screen__inner {
+    width: 320px;
+    padding: 201px 15px 163px 15px; }
+  .main-screen__inner h1 {
+    margin: 0 0 27px 0;
+    font-size: 40px;
+    line-height: 47px; }
+  .main-screen__inner p {
+    max-width: none;
+    margin: 0 0 40px 0;
+    padding-left: 51px;
+    font-size: 16px;
+    line-height: 158%; }
+  .main-screen__inner p::before {
+    top: 15px; }
+  .main-screen__inner > a {
+    position: relative;
+    max-width: none;
+    width: calc(100% - 3px);
+    margin-left: 3px; }
+  .main-screen__inner > a::before {
+    content: "Бесплатная консультация";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 17px 31px 17px 31px;
+    text-align: center; }
+  .main-screen__inner > a span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+            clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden; } }
 
 .advantage {
   display: -webkit-box;
