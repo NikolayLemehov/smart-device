@@ -663,11 +663,13 @@ input[type="radio"].visually-hidden {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     width: 1440px;
-    padding-left: 20px; }
+    padding-left: 20px;
+    padding-right: 7px; }
   .page-footer__primary {
     position: relative;
-    width: 425px;
-    min-height: 200px; }
+    min-width: 220px;
+    min-height: 200px;
+    margin-right: auto; }
   .page-footer__primary::after,
   .page-footer__primary::before {
     content: "";
@@ -685,21 +687,21 @@ input[type="radio"].visually-hidden {
   .page-footer__logo {
     margin-bottom: 54px; }
   .page-footer__menu {
-    width: 557px;
-    margin-right: 99px; }
+    width: 541px;
+    margin-right: 114px; }
   .page-footer__menu ul {
     list-style: none;
     -webkit-column-count: 2;
        -moz-column-count: 2;
             column-count: 2;
-    -webkit-column-gap: 57px;
-       -moz-column-gap: 57px;
-            column-gap: 57px;
+    -webkit-column-gap: 73px;
+       -moz-column-gap: 73px;
+            column-gap: 73px;
     margin: 0 0 0 -2px;
     padding: 0; }
   .page-footer__menu li {
     display: inline-block;
-    width: 250px; }
+    width: 234px; }
   .page-footer__menu a {
     font-family: "PT Mono", "Arial", sans-serif;
     font-style: normal;
@@ -761,8 +763,6 @@ input[type="radio"].visually-hidden {
     color: #1b2d37;
     opacity: 0.5;
     text-decoration: none; }
-  .page-footer__development {
-    margin-right: 7px; }
   .page-footer__development a {
     font-family: "PT Mono", "Arial", sans-serif;
     font-style: normal;
@@ -774,6 +774,17 @@ input[type="radio"].visually-hidden {
     color: #1b2d37;
     opacity: 0.5;
     text-decoration: none; } }
+
+@media (min-width: 0) and (max-width: 1439px) {
+  .page-footer__menu {
+    width: calc((234px - (1440px - 100vw) * 0.08173) * 2 + (73px - (1440px - 100vw) * 0.17548));
+    margin-right: calc(114px - (1440px - 100vw) * 0.26202); }
+  .page-footer__menu ul {
+    -webkit-column-gap: calc(73px - (1440px - 100vw) * 0.17548);
+       -moz-column-gap: calc(73px - (1440px - 100vw) * 0.17548);
+            column-gap: calc(73px - (1440px - 100vw) * 0.17548); }
+  .page-footer__menu li {
+    width: calc(234px - (1440px - 100vw) * 0.08173); } }
 
 .social-list {
   list-style: none;

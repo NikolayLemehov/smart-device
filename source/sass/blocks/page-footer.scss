@@ -1,7 +1,10 @@
 @media (min-width: 0) {
-  $columnWidth: 250px;
-  $columnCount: 2;
-  $gap: 57px;
+  $column_width: 234px;
+  $target_column_width: 200px;
+  $column_count: 2;
+  $gap: 73px;
+  $menu_margin_right: 114px;
+  $target_menu_margin_right: 5px;
 
   @mixin pt-mono-low-case-font {
     font-family: "PT Mono", "Arial", sans-serif;
@@ -50,12 +53,14 @@
     flex-wrap: wrap;
     width: $desktop-container-width;
     padding-left: 20px;
+    padding-right: 7px;
   }
 
   .page-footer__primary {
     position: relative;
-    width: 425px;
+    min-width: 220px;
     min-height: 200px;
+    margin-right: auto;
   }
 
   .page-footer__primary::after,
@@ -82,13 +87,13 @@
   }
 
   .page-footer__menu {
-    width: $columnWidth * $columnCount + $gap;
-    margin-right: 99px;
+    width: $column_width * $column_count + $gap;
+    margin-right: $menu_margin_right;
   }
 
   .page-footer__menu ul {
     list-style: none;
-    column-count: $columnCount;
+    column-count: $column_count;
     column-gap: $gap;
     margin: 0 0 0 -2px;
     padding: 0;
@@ -96,7 +101,7 @@
 
   .page-footer__menu li {
     display: inline-block;
-    width: $columnWidth;
+    width: $column_width;
   }
 
   .page-footer__menu a {
@@ -142,13 +147,30 @@
     text-decoration: none;
   }
 
-  .page-footer__development {
-    margin-right: 7px;
-  }
-
   .page-footer__development a {
     @include pt-mono-upper-case-font;
     text-decoration: none;
+  }
+
+  @media (max-width: $desktop-container-width - 1) {
+    $dcw: $desktop-container-width;
+    $dw: $desktop-width;
+    $menu_coefficient: ($menu_margin_right - $target_menu_margin_right) / ($dcw - $dw);
+    $ul_coefficient: $gap / ($dcw - $dw);
+    $li_coefficient: ($column_width - $target_column_width) / ($dcw - $dw);
+
+    .page-footer__menu {
+      width: calc((#{$column_width} - (#{$dcw} - 100vw) * #{$li_coefficient}) * #{$column_count} + (#{$gap} - (#{$dcw} - 100vw) * #{$ul_coefficient}));
+      margin-right: calc(#{$menu_margin_right} - (#{$dcw} - 100vw) * #{$menu_coefficient});
+    }
+
+    .page-footer__menu ul {
+      column-gap: calc(#{$gap} - (#{$dcw} - 100vw) * #{$ul_coefficient});
+    }
+
+    .page-footer__menu li {
+      width: calc(#{$column_width} - (#{$dcw} - 100vw) * #{$li_coefficient});
+    }
   }
 }
 
