@@ -41,12 +41,12 @@
 }
 
 @media (max-width: $tablet-width - 1) {
-  .logo__wrap-img svg {
+  .logo:not(.logo--footer) .logo__wrap-img svg {
     width: 38px;
     height: 38px;
   }
 
-  .logo__text {
+  .logo:not(.logo--footer) .logo__text {
     @include visually-hidden;
   }
 }
