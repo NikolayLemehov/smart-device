@@ -1,0 +1,29 @@
+.social-list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.social-list svg {
+  display: block;
+}
+
+.social-list li {
+  margin-right: 15px;
+}
+
+.social-list li:last-child {
+  margin-right: 0;
+}
+
+.social-list a {
+  display: block;
+}
+
+.social-list a:hover {
+  opacity: 0.6;
+}
+
+.social-list a:active {
+  opacity: 0.3;
+}
