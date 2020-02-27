@@ -1,7 +1,6 @@
 .social-list {
   list-style: none;
   display: flex;
-  margin: 0; // временно
   padding: 0;
 }
 
@@ -11,4 +10,8 @@
 
 .social-list li {
   margin-right: 15px;
+}
+
+.social-list li:last-child {
+  margin-right: 0;
 }
