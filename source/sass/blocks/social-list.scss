@@ -15,3 +15,15 @@
 .social-list li:last-child {
   margin-right: 0;
 }
+
+.social-list a {
+  display: block;
+}
+
+.social-list a:hover {
+  opacity: 0.6;
+}
+
+.social-list a:active {
+  opacity: 0.3;
+}

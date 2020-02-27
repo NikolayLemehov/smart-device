@@ -121,13 +121,30 @@
     text-decoration: none;
   }
 
-  .page-footer__our-contacts address {
+  .page-footer__menu a:hover {
+    opacity: 0.3;
+  }
+
+  .page-footer__menu a:active {
+    opacity: 0.15;
+  }
+
+  .page-footer__our-contacts span,
+  .page-footer__our-contacts a {
     @include pt-mono-low-case-font;
   }
 
   .page-footer__our-contacts a {
     text-decoration: none;
     color: $color-dark;
+  }
+
+  .page-footer__our-contacts a:hover {
+    opacity: 0.3;
+  }
+
+  .page-footer__our-contacts a:active {
+    opacity: 0.15;
   }
 
   .page-footer__copyright {
@@ -160,9 +177,25 @@
     text-decoration: none;
   }
 
+  .page-footer__terms a:hover {
+    opacity: 0.3;
+  }
+
+  .page-footer__terms a:active {
+    opacity: 0.15;
+  }
+
   .page-footer__development a {
     @include pt-mono-upper-case-font;
     text-decoration: none;
+  }
+
+  .page-footer__development a:hover {
+    opacity: 0.3;
+  }
+
+  .page-footer__development a:active {
+    opacity: 0.15;
   }
 
   @media (max-width: $desktop-container-width - 1) and (min-width: $desktop-width) {
