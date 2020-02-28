@@ -204,8 +204,8 @@
     $menu_coefficient: ($menu_margin_right - $target_menu_margin_right) / ($dcw - $dw);
     $ul_coefficient: $gap / ($dcw - $dw);
     $li_coefficient: ($column_width - $target_column_width) / ($dcw - $dw);
-    $p_coefficient: ($first_p_margin_right - $target_first_p_margin_right) / ($dcw - $dw);
     $cr_coefficient: ($copyright_margin_right - $target_copyright_margin_right) / ($dcw - $dw);
+    $p_coefficient: ($first_p_margin_right - $target_first_p_margin_right) / ($dcw - $dw);
 
     .page-footer__menu {
       width: calc((#{$column_width} - (#{$dcw} - 100vw) * #{$li_coefficient}) * #{$column_count} + (#{$gap} - (#{$dcw} - 100vw) * #{$ul_coefficient}));
