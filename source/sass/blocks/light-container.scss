@@ -14,3 +14,9 @@
     url("#{$prefix-css-img}triangle-little-left.svg") no-repeat calc(50% - 582px) 45px,
     url("#{$prefix-css-img}triangle-little-right.svg") no-repeat calc(50% + 772px) 396px;
 }
+
+@media (max-width: $desktop-width - 1) {
+  .light-container__bg {
+    background: url("#{$prefix-css-img}triangle-right-tablet.svg") no-repeat calc(50% + 262px) 90px;
+  }
+}

@@ -820,6 +820,10 @@ input[type="radio"].visually-hidden {
   bottom: 0;
   background: url("../img/triangle-big-left.svg") no-repeat calc(50% - 761px) 445px, url("../img/triangle-big-right.svg") no-repeat calc(50% + 43px) 147px, url("../img/triangle-little-left.svg") no-repeat calc(50% - 582px) 45px, url("../img/triangle-little-right.svg") no-repeat calc(50% + 772px) 396px; }
 
+@media (max-width: 1023px) {
+  .light-container__bg {
+    background: url("../img/triangle-right-tablet.svg") no-repeat calc(50% + 262px) 90px; } }
+
 @media (min-width: 0) {
   .advantage {
     display: -webkit-box;
@@ -896,7 +900,23 @@ input[type="radio"].visually-hidden {
 
 @media (min-width: 0) and (max-width: 1023px) {
   .advantage__inner {
-    width: 770px; } }
+    width: 770px;
+    padding: 54px 25px 0; }
+  .advantage__inner ul {
+    max-width: 750px;
+    margin: 0 0 0 -30px; }
+  .advantage__inner li {
+    width: 345px;
+    min-height: 232px;
+    margin: 0 0 30px 30px;
+    padding: 67px 21px 21px 28px;
+    -webkit-box-shadow: inset 2px 0 0 0 #00b2ff, inset 0 0 0 1px #ebebeb;
+            box-shadow: inset 2px 0 0 0 #00b2ff, inset 0 0 0 1px #ebebeb; }
+  .advantage__inner li svg {
+    left: 28px;
+    top: 25px; }
+  .advantage__inner h3 {
+    margin: 0 0 8px 0; } }
 
 @media (min-width: 0) and (max-width: 767px) {
   .advantage__inner {
