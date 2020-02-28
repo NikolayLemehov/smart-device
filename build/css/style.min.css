@@ -769,7 +769,7 @@ input[type="radio"].visually-hidden {
 @media (min-width: 0) and (max-width: 767px) {
   .main-screen__inner {
     width: 320px;
-    padding: 201px 15px 163px 15px; }
+    padding: 201px 15px 70px 15px; }
   .main-screen__inner h1 {
     margin: 0 0 27px 0;
     font-size: 40px;
@@ -823,6 +823,10 @@ input[type="radio"].visually-hidden {
 @media (max-width: 1023px) {
   .light-container__bg {
     background: url("../img/triangle-right-tablet.svg") no-repeat calc(50% + 262px) 90px; } }
+
+@media (max-width: 767px) {
+  .light-container__bg {
+    background: url("../img/triangle-right-mobile.svg") no-repeat calc(50% + 208px) 652px; } }
 
 @media (min-width: 0) {
   .advantage {
@@ -915,12 +919,34 @@ input[type="radio"].visually-hidden {
   .advantage__inner li svg {
     left: 28px;
     top: 25px; }
+  .advantage__supplier {
+    width: 31.72px;
+    margin-top: -2px; }
+  .advantage__detective {
+    width: 30.31px; }
+  .advantage__tag {
+    width: 32.18px;
+    margin-top: -2px; }
   .advantage__inner h3 {
     margin: 0 0 8px 0; } }
 
 @media (min-width: 0) and (max-width: 767px) {
   .advantage__inner {
-    width: 320px; } }
+    width: 320px;
+    padding: 37px 14px 0; }
+  .advantage__inner ul {
+    max-width: none;
+    margin: 0; }
+  .advantage__inner li {
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 72px 21px 26px 28px; }
+  .advantage__inner h3 {
+    font-size: 20px;
+    line-height: 140.62%; }
+  .advantage__inner p {
+    font-size: 16px;
+    line-height: 22px; } }
 
 .about-us {
   height: 500px; }

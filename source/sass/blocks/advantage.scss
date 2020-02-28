@@ -125,6 +125,20 @@
       top: 25px;
     }
 
+    .advantage__supplier {
+      width: 31.72px;
+      margin-top: -2px;
+    }
+
+    .advantage__detective {
+      width: 30.31px;
+    }
+
+    .advantage__tag {
+      width: 32.18px;
+      margin-top: -2px;
+    }
+
     .advantage__inner h3 {
       margin: 0 0 8px 0;
     }
@@ -133,6 +147,28 @@
   @media (max-width: $tablet-width - 1) {
     .advantage__inner {
       width: $mobile-width;
+      padding: 37px 14px 0;
+    }
+
+    .advantage__inner ul {
+      max-width: none;
+      margin: 0;
+    }
+
+    .advantage__inner li {
+      width: 100%;
+      margin: 0 0 20px 0;
+      padding: 72px 21px 26px 28px;
+    }
+
+    .advantage__inner h3 {
+      font-size: 20px;
+      line-height: 140.62%;
+    }
+
+    .advantage__inner p {
+      font-size: 16px;
+      line-height: 22px;
     }
   }
 }

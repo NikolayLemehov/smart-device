@@ -20,3 +20,9 @@
     background: url("#{$prefix-css-img}triangle-right-tablet.svg") no-repeat calc(50% + 262px) 90px;
   }
 }
+
+@media (max-width: $tablet-width - 1) {
+  .light-container__bg {
+    background: url("#{$prefix-css-img}triangle-right-mobile.svg") no-repeat calc(50% + 208px) 652px;
+  }
+}
