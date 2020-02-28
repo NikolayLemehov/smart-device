@@ -808,6 +808,18 @@ input[type="radio"].visually-hidden {
     clip: rect(0 0 0 0);
     overflow: hidden; } }
 
+.light-container {
+  position: relative; }
+
+.light-container__bg {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../img/triangle-big-left.svg") no-repeat calc(50% - 761px) 445px, url("../img/triangle-big-right.svg") no-repeat calc(50% + 43px) 147px, url("../img/triangle-little-left.svg") no-repeat calc(50% - 582px) 45px, url("../img/triangle-little-right.svg") no-repeat calc(50% + 772px) 396px; }
+
 .advantage {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -816,14 +828,66 @@ input[type="radio"].visually-hidden {
       -ms-flex-pack: center;
           justify-content: center; }
 
-.advantage h2 {
-  margin: 0; }
-
 .advantage__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 1440px;
-  min-height: 317px;
-  color: #ffffff;
-  background-color: #1b2931; }
+  padding: 112px 127px 0 143px; }
+
+.advantage__inner ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 0 0 -30px;
+  padding: 0; }
+
+.advantage__inner li {
+  position: relative;
+  width: 570px;
+  min-height: 299px;
+  margin: 0 0 30px 30px;
+  padding: 95px 40px 65px 45px;
+  background-color: #ffffff;
+  -webkit-box-shadow: inset 3px 0 0 0 #00b2ff, inset 0 0 0 1px #ebebeb;
+          box-shadow: inset 3px 0 0 0 #00b2ff, inset 0 0 0 1px #ebebeb; }
+
+.advantage__inner li:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #00b2ff;
+  cursor: pointer; }
+
+.advantage__inner li:hover svg {
+  fill: #ffffff; }
+
+.advantage__inner li:hover h3,
+.advantage__inner li:hover p {
+  color: #ffffff; }
+
+.advantage__inner li svg {
+  position: absolute;
+  left: 45px;
+  top: 40px;
+  fill: #00b2ff; }
+
+.advantage__inner h3 {
+  margin: 0 0 15px 0;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 34px;
+  color: #00b2ff; }
+
+.advantage__inner p {
+  margin: 0 0 0 0;
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #666666; }
 
 @media (max-width: 1023px) {
   .advantage__inner {
@@ -832,6 +896,9 @@ input[type="radio"].visually-hidden {
 @media (max-width: 767px) {
   .advantage__inner {
     width: 320px; } }
+
+.about-us {
+  height: 500px; }
 
 @media (min-width: 0) {
   .page-footer {

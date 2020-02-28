@@ -1,0 +1,16 @@
+.light-container {
+  position: relative;
+}
+
+.light-container__bg {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url("#{$prefix-css-img}triangle-big-left.svg") no-repeat calc(50% - 761px) 445px,
+    url("#{$prefix-css-img}triangle-big-right.svg") no-repeat calc(50% + 43px) 147px,
+    url("#{$prefix-css-img}triangle-little-left.svg") no-repeat calc(50% - 582px) 45px,
+    url("#{$prefix-css-img}triangle-little-right.svg") no-repeat calc(50% + 772px) 396px;
+}
