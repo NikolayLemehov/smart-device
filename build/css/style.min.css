@@ -959,20 +959,22 @@ input[type="radio"].visually-hidden {
 
 .about-us__inner {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 1440px;
-  padding: 75px 130px 0 323px; }
+  padding: 75px 130px 0 113px; }
 
-.about-us__inner::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 113px;
-  top: 80px;
-  width: 220px;
+.about-us__image {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 210px;
   height: 317px;
-  background: #ffffff url("../img/year2005-desktop@1x.png") no-repeat 0 0; }
+  margin: 5px 0 0 0;
+  background: url("../img/year2005-desktop@1x.png") no-repeat 0 0;
+  background-size: 220px 317px; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    .about-us__inner::before {
+    .about-us__image {
       background-image: url("../img/year2005-desktop@2x.png"); } }
 
 .about-us__inner h2 {
