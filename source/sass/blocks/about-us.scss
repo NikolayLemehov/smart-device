@@ -1,58 +1,77 @@
-.about-us {
-  display: flex;
-  justify-content: center;
-  height: 500px; // временно
-}
+@media (min-width: 0) {
+  $inner_left: 113px;
+  $target_inner_left: 30px;
+  $inner_right: 130px;
+  $target_inner_right: 30px;
 
-.about-us__inner {
-  position: relative;
-  display: flex;
-  width: $desktop-container-width;
-  padding: 75px 130px 0 113px;
-}
+  .about-us {
+    display: flex;
+    justify-content: center;
+    height: 500px; // временно
+  }
 
-.about-us__image {
-  flex-shrink: 0;
-  width: 210px;
-  height: 317px;
-  margin: 5px 0 0 0;
-  background: url("#{$prefix-css-img}year2005-desktop@1x.png") no-repeat 0 0;
+  .about-us__inner {
+    position: relative;
+    display: flex;
+    width: $desktop-container-width;
+    padding: 75px $inner_right 0 $inner_left;
+  }
 
-  @include bg-retina("year2005-desktop@2x.png");
-  background-size: 220px 317px;
-}
+  .about-us__image {
+    flex-shrink: 0;
+    width: 210px;
+    height: 317px;
+    margin: 5px 0 0 0;
+    background: url("#{$prefix-css-img}year2005-desktop@1x.png") no-repeat 0 0;
 
-.about-us__inner h2 {
-  margin: 0 0 21px 0;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 51px;
-  color: #666666;
-}
+    @include bg-retina("year2005-desktop@2x.png");
+    background-size: 220px 317px;
+  }
 
-.about-us__inner p {
-  margin: 0 0 20px 0;
-  font-family: "PT Mono", "Arial", sans-serif;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
-  color: #666666;
-}
+  .about-us__inner h2 {
+    margin: 0 0 21px 0;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 51px;
+    color: #666666;
+  }
 
-.about-us__inner a {
-  display: block;
-  width: 180px;
-  height: 45px;
-  margin-top: 39px;
-  padding: 14px 25px;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: $color-blue;
-  border: 1px solid $color-blue;
-  border-radius: 5px;
+  .about-us__inner p {
+    margin: 0 0 20px 0;
+    font-family: "PT Mono", "Arial", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #666666;
+  }
+
+  .about-us__inner a {
+    display: block;
+    width: 180px;
+    height: 45px;
+    margin-top: 39px;
+    padding: 14px 25px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-blue;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+  }
+
+  @media (max-width: $desktop-container-width - 1) and (min-width: $desktop-width) {
+    $dcw: $desktop-container-width;
+    $dw: $desktop-width;
+    $pl_coefficient: ($inner_left - $target_inner_left) / ($dcw - $dw);
+    $pr_coefficient: ($inner_right - $target_inner_right) / ($dcw - $dw);
+
+    .about-us__inner {
+      padding-left: calc(#{$inner_left} - (#{$dcw} - 100vw) * #{$pl_coefficient});
+      padding-right: calc(#{$inner_right} - (#{$dcw} - 100vw) * #{$pr_coefficient});
+    }
+  }
 }
