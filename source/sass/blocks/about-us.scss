@@ -36,7 +36,13 @@
     color: #666666;
   }
 
+  .about-us__container {
+    display: flex;
+    flex-direction: column;
+  }
+
   .about-us__inner p {
+    position: relative;
     margin: 0 0 20px 0;
     font-family: "PT Mono", "Arial", sans-serif;
     font-weight: normal;
@@ -45,11 +51,15 @@
     color: #666666;
   }
 
+  .about-us__tablet-text {
+    display: none;
+  }
+
   .about-us__inner a {
     display: block;
     width: 180px;
     height: 45px;
-    margin-top: 39px;
+    margin-top: 19px;
     padding: 14px 25px;
     font-weight: bold;
     font-size: 14px;
@@ -72,6 +82,41 @@
     .about-us__inner {
       padding-left: calc(#{$inner_left} - (#{$dcw} - 100vw) * #{$pl_coefficient});
       padding-right: calc(#{$inner_right} - (#{$dcw} - 100vw) * #{$pr_coefficient});
+    }
+  }
+
+  @media (max-width: $desktop-width - 1) {
+    .about-us__inner {
+      width: $tablet-width;
+      padding: 26px 20px 0;
+    }
+
+    .about-us__image {
+      width: 192px;
+      height: 362px;
+      margin: 0 0 0 0;
+      background: url("#{$prefix-css-img}year2005-tablet@1x.png") no-repeat -21px -2px;
+
+      @include bg-retina("year2005-tablet@2x.png");
+      background-size: 244px 362px;
+    }
+
+    .about-us__inner h2 {
+      margin: 0 0 26px -3px;
+      font-size: 32px;
+      line-height: 140.62%;
+    }
+
+    .about-us__tablet-text {
+      display: inline;
+    }
+
+    .about-us__desktop-text {
+      display: none;
+    }
+
+    .about-us__inner a {
+      margin-top: 21px;
     }
   }
 }
