@@ -1,99 +1,127 @@
-.offer {
-  display: flex;
-  justify-content: center;
-  color: #ffffff;
-  background-color: $color-dark;
-}
+@media (min-width: 0) {
+  $li_width: 370px;
+  $target_li_width: 300px;
+  $inner_left: 43px;
+  $target_inner_left: 30px;
+  $inner_right: 27px;
+  $target_inner_right: 30px;
 
-.offer__inner {
-  width: $desktop-container-width;
-  padding: 88px 127px 127px 143px;
-}
-
-.offer__inner h2 {
-  margin: 0 0 52px 0;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 51px;
-}
-
-.offer__inner ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.offer__item {
-  position: relative;
-  width: 370px;
-  height: 620px;
-  margin: 0 30px 0 0;
-  padding: 50px 153px 0 44px;
-
-  &--production {
-    background: url("#{$prefix-css-img}offer-production@1x.png") no-repeat 0 0;
-
-    @include bg-retina("offer-production@1x.png");
+  .offer {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    background-color: $color-dark;
   }
 
-  &--assembling {
-    background: url("#{$prefix-css-img}offer-assembling@1x.png") no-repeat 0 0;
-
-    @include bg-retina("offer-assembling@2x.png");
+  .offer__inner {
+    display: flex;
+    justify-content: center;
+    width: $desktop-container-width;
+    padding: 88px $inner_right 127px $inner_left;
   }
 
-  &--components {
-    background: url("#{$prefix-css-img}offer-components@1x.png") no-repeat 0 0;
-
-    @include bg-retina("offer-components@2x.png");
+  .offer__inner h2 {
+    margin: 0 0 52px 0;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 51px;
   }
 
-  background-size: 370px 620px;
-}
-
-.offer__item:last-child {
-  margin-right: 0;
-}
-
-.offer__inner p {
-  width: 100%;
-  margin: 0;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
-}
-
-.offer__link {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 63px;
-  height: 63px;
-}
-
-.offer__link a {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: $color-blue;
-
-  &:hover {
-    opacity: 0.6;
+  .offer__inner ul {
+    list-style: none;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
   }
 
-  &:active {
-    opacity: 0.3;
-  }
-}
+  .offer__item {
+    position: relative;
+    width: $li_width;
+    height: 620px;
+    margin: 0 30px 0 0;
+    padding: 50px 44px 0 44px;
 
-.offer__link a::before {
-  content: "";
-  position: absolute;
-  left: 31px;
-  top: 27px;
-  width: 6px;
-  height: 9px;
-  background: url("#{$prefix-css-img}right-arrow.svg") no-repeat 0 0;
+    &--production {
+      background: url("#{$prefix-css-img}offer-production@1x.png") no-repeat 0 0;
+
+      @include bg-retina("offer-production@1x.png");
+    }
+
+    &--assembling {
+      background: url("#{$prefix-css-img}offer-assembling@1x.png") no-repeat 0 0;
+
+      @include bg-retina("offer-assembling@2x.png");
+    }
+
+    &--components {
+      background: url("#{$prefix-css-img}offer-components@1x.png") no-repeat 0 0;
+
+      @include bg-retina("offer-components@2x.png");
+    }
+
+    background-size: 370px 620px;
+  }
+
+  .offer__item:last-child {
+    margin-right: 0;
+  }
+
+  .offer__inner p {
+    width: 173px;
+    margin: 0;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .offer__link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 63px;
+    height: 63px;
+  }
+
+  .offer__link a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $color-blue;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  .offer__link a::before {
+    content: "";
+    position: absolute;
+    left: 31px;
+    top: 27px;
+    width: 6px;
+    height: 9px;
+    background: url("#{$prefix-css-img}right-arrow.svg") no-repeat 0 0;
+  }
+
+  @media (max-width: $desktop-container-width - 1) and (min-width: $desktop-width) {
+    $dcw: $desktop-container-width;
+    $dw: $desktop-width;
+    $li_coefficient: ($li_width - $target_li_width) / ($dcw - $dw);
+    $pl_coefficient: ($inner_left - $target_inner_left) / ($dcw - $dw);
+    $pr_coefficient: ($inner_right - $target_inner_right) / ($dcw - $dw);
+
+    .offer__inner {
+      padding-left: calc(#{$inner_left} - (#{$dcw} - 100vw) * #{$pl_coefficient});
+      padding-right: calc(#{$inner_right} - (#{$dcw} - 100vw) * #{$pr_coefficient});
+    }
+
+    .offer__inner li {
+      width: calc(#{$li_width} - (#{$dcw} - 100vw) * #{$li_coefficient});
+    }
+  }
 }
