@@ -7,14 +7,13 @@
   .about-us {
     display: flex;
     justify-content: center;
-    height: 500px; // временно
   }
 
   .about-us__inner {
     position: relative;
     display: flex;
     width: $desktop-container-width;
-    padding: 75px $inner_right 0 $inner_left;
+    padding: 75px $inner_right 96px $inner_left;
   }
 
   .about-us__image {
