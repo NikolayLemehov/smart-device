@@ -1,50 +1,57 @@
 'use strict';
 
-var activeFooterMenu = function () {
-  var footerMenu = document.querySelector('.page-footer__menu');
-  var toggle = footerMenu.querySelector('.page-footer__toggle');
-  var plus = toggle.querySelector('.page-footer__plus');
-  var minus = toggle.querySelector('.page-footer__minus');
+var PageFooterToggle = function (className) {
+  this.className = className;
+  this.element = document.querySelector('.' + className);
+  this.toggle = this.element.querySelector('.page-footer__toggle');
+  this.plus = this.toggle.querySelector('.page-footer__plus');
+  this.minus = this.toggle.querySelector('.page-footer__minus');
+  this.isClosed = this.element.classList.contains(this.className + '--closed');
+  this.isAllExisting = this.element && this.toggle && this.plus && this.minus;
+};
+PageFooterToggle.prototype.close = function () {
+  this.element.classList.add(this.className + '--closed');
+  this.plus.style.display = 'block';
+  this.minus.style.display = 'none';
+  this.isClosed = true;
+};
+PageFooterToggle.prototype.open = function () {
+  this.element.classList.remove(this.className + '--closed');
+  this.plus.style.display = 'none';
+  this.minus.style.display = 'block';
+  this.isClosed = false;
+};
+PageFooterToggle.prototype.removeNoJs = function () {
+  this.element.classList.remove(this.className + '--nojs');
+};
 
-  footerMenu.classList.remove('page-footer__menu--nojs');
-
-  toggle.addEventListener('click', function () {
-    if (footerMenu.classList.contains('page-footer__menu--closed')) {
-      footerMenu.classList.remove('page-footer__menu--closed');
-      footerMenu.classList.add('page-footer__menu--opened');
-      plus.style.display = 'none';
-      minus.style.display = 'block';
-    } else {
-      footerMenu.classList.add('page-footer__menu--closed');
-      footerMenu.classList.remove('page-footer__menu--opened');
-      plus.style.display = 'block';
-      minus.style.display = 'none';
+var onViewChange = function () {
+  if (!menuToggle.isAllExisting || !outContactsToggle.isAllExisting) {
+    return;
+  }
+  [menuToggle, outContactsToggle].forEach(function (it) {
+    if (!it.isClosed) {
+      it.close();
     }
   });
 };
 
-var activeFooterOurContacts = function () {
-  var footerMenu = document.querySelector('.page-footer__our-contacts');
-  var toggle = footerMenu.querySelector('.page-footer__toggle');
-  var plus = toggle.querySelector('.page-footer__plus');
-  var minus = toggle.querySelector('.page-footer__minus');
-
-  footerMenu.classList.remove('page-footer__our-contacts--nojs');
-
-  toggle.addEventListener('click', function () {
-    if (footerMenu.classList.contains('page-footer__our-contacts--closed')) {
-      footerMenu.classList.remove('page-footer__our-contacts--closed');
-      footerMenu.classList.add('page-footer__our-contacts--opened');
-      plus.style.display = 'none';
-      minus.style.display = 'block';
+var activeFooterSection = function (object) {
+  if (!object.isAllExisting) {
+    return;
+  }
+  object.removeNoJs();
+  object.toggle.addEventListener('click', function () {
+    if (object.isClosed) {
+      onViewChange();
+      object.open();
     } else {
-      footerMenu.classList.add('page-footer__our-contacts--closed');
-      footerMenu.classList.remove('page-footer__our-contacts--opened');
-      plus.style.display = 'block';
-      minus.style.display = 'none';
+      object.close();
     }
   });
 };
 
-activeFooterMenu();
-activeFooterOurContacts();
+var menuToggle = new PageFooterToggle('page-footer__menu');
+var outContactsToggle = new PageFooterToggle('page-footer__our-contacts');
+activeFooterSection(menuToggle);
+activeFooterSection(outContactsToggle);
