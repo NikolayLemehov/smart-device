@@ -907,10 +907,10 @@ input[type="radio"].visually-hidden {
     width: 770px;
     padding: 54px 25px 0; }
   .advantage__inner ul {
-    max-width: 750px;
+    max-width: 730px;
     margin: 0 0 0 -30px; }
   .advantage__inner li {
-    width: 345px;
+    width: 335px;
     min-height: 232px;
     margin: 0 0 30px 30px;
     padding: 67px 21px 21px 28px;
