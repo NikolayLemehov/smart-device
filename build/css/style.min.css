@@ -1049,6 +1049,22 @@ input[type="radio"].visually-hidden {
   .about-us__inner a {
     margin-top: 21px; } }
 
+@media (min-width: 0) and (max-width: 767px) {
+  .about-us__inner {
+    width: 320px;
+    padding: 16px 14px 0; }
+  .about-us__image {
+    display: none; }
+  .about-us__inner h2 {
+    margin: 0 0 20px;
+    font-size: 28px; }
+  .about-us__inner p {
+    margin: 0 0 40px 3px; }
+  .about-us__inner p:last-child {
+    margin-bottom: 28px; }
+  .about-us__inner a {
+    margin: 0 0 0 3px; } }
+
 @media (min-width: 0) {
   .page-footer {
     display: -webkit-box;

@@ -119,4 +119,32 @@
       margin-top: 21px;
     }
   }
+
+  @media (max-width: $tablet-width - 1) {
+    .about-us__inner {
+      width: $mobile-width;
+      padding: 16px 14px 0;
+    }
+
+    .about-us__image {
+      display: none;
+    }
+
+    .about-us__inner h2 {
+      margin: 0 0 20px;
+      font-size: 28px;
+    }
+
+    .about-us__inner p {
+      margin: 0 0 40px 3px;
+    }
+
+    .about-us__inner p:last-child {
+      margin-bottom: 28px;
+    }
+
+    .about-us__inner a {
+      margin: 0 0 0 3px;
+    }
+  }
 }
