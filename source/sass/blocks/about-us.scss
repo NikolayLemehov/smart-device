@@ -73,6 +73,14 @@
     border-radius: 5px;
   }
 
+  .about-us__inner a:hover {
+    opacity: 0.6;
+  }
+
+  .about-us__inner a:active {
+    opacity: 0.3;
+  }
+
   @media (max-width: $desktop-container-width - 1) and (min-width: $desktop-width) {
     $dcw: $desktop-container-width;
     $dw: $desktop-width;

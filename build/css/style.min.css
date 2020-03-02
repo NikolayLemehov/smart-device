@@ -1016,7 +1016,11 @@ input[type="radio"].visually-hidden {
     text-decoration: none;
     color: #00b2ff;
     border: 1px solid #00b2ff;
-    border-radius: 5px; } }
+    border-radius: 5px; }
+  .about-us__inner a:hover {
+    opacity: 0.6; }
+  .about-us__inner a:active {
+    opacity: 0.3; } }
 
 @media (min-width: 0) and (max-width: 1439px) and (min-width: 1024px) {
   .about-us__inner {
