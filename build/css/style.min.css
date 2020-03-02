@@ -1029,7 +1029,7 @@ input[type="radio"].visually-hidden {
 @media (min-width: 0) and (max-width: 1023px) {
   .about-us__inner {
     width: 768px;
-    padding: 26px 20px 0; }
+    padding: 26px 20px 73px; }
   .about-us__image {
     width: 192px;
     height: 362px;
@@ -1166,6 +1166,80 @@ input[type="radio"].visually-hidden {
     padding-right: calc(27px - (1440px - 100vw) * -0.00721); }
   .offer__inner li {
     width: calc(370px - (1440px - 100vw) * 0.16827); } }
+
+@media (min-width: 0) and (max-width: 1023px) {
+  .offer__inner {
+    width: 770px;
+    padding: 50px 15px 32px 16px; }
+  .offer__inner ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .offer__item {
+    width: 720px;
+    height: 256px;
+    margin: 0 0 46px 0;
+    padding: 40px 44px 0;
+    background-size: 720px 256px; }
+    .offer__item--production {
+      background: url("../img/offer-production-tablet@1x.png") no-repeat 0 0; } }
+    @media (min-width: 0) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (max-width: 1023px) and (min-resolution: 144dpi), (min-width: 0) and (max-width: 1023px) and (min-resolution: 1.5dppx) {
+      .offer__item--production {
+        background-image: url("../img/offer-production-tablet@1x.png"); } }
+
+@media (min-width: 0) and (max-width: 1023px) {
+    .offer__item--assembling {
+      background: url("../img/offer-assembling-tablet@1x.png") no-repeat 0 0; } }
+    @media (min-width: 0) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (max-width: 1023px) and (min-resolution: 144dpi), (min-width: 0) and (max-width: 1023px) and (min-resolution: 1.5dppx) {
+      .offer__item--assembling {
+        background-image: url("../img/offer-assembling-tablet@2x.png"); } }
+
+@media (min-width: 0) and (max-width: 1023px) {
+    .offer__item--components {
+      background: url("../img/offer-components-tablet@1x.png") no-repeat 0 0; } }
+    @media (min-width: 0) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (max-width: 1023px) and (min-resolution: 144dpi), (min-width: 0) and (max-width: 1023px) and (min-resolution: 1.5dppx) {
+      .offer__item--components {
+        background-image: url("../img/offer-components-tablet@2x.png"); } }
+
+@media (min-width: 0) and (max-width: 1023px) {
+  .offer__inner h2 {
+    width: 704px;
+    margin: 0 0 51px 0;
+    padding: 0 0 0 0;
+    font-size: 32px;
+    line-height: 140.62%; } }
+
+@media (min-width: 0) and (max-width: 767px) {
+  .offer__inner {
+    width: 320px; }
+  .offer__item {
+    width: 290px;
+    height: 256px;
+    background-size: 290px 256px; }
+    .offer__item--production {
+      background: url("../img/offer-production-mobile@1x.png") no-repeat 0 0; } }
+    @media (min-width: 0) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (max-width: 767px) and (min-resolution: 144dpi), (min-width: 0) and (max-width: 767px) and (min-resolution: 1.5dppx) {
+      .offer__item--production {
+        background-image: url("../img/offer-production-mobile@1x.png"); } }
+
+@media (min-width: 0) and (max-width: 767px) {
+    .offer__item--assembling {
+      background: url("../img/offer-assembling-mobile@1x.png") no-repeat 0 0; } }
+    @media (min-width: 0) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (max-width: 767px) and (min-resolution: 144dpi), (min-width: 0) and (max-width: 767px) and (min-resolution: 1.5dppx) {
+      .offer__item--assembling {
+        background-image: url("../img/offer-assembling-mobile@2x.png"); } }
+
+@media (min-width: 0) and (max-width: 767px) {
+    .offer__item--components {
+      background: url("../img/offer-components-mobile@1x.png") no-repeat 0 0; } }
+    @media (min-width: 0) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (max-width: 767px) and (min-resolution: 144dpi), (min-width: 0) and (max-width: 767px) and (min-resolution: 1.5dppx) {
+      .offer__item--components {
+        background-image: url("../img/offer-components-mobile@2x.png"); } }
+
+@media (min-width: 0) and (max-width: 767px) {
+  .offer__inner h2 {
+    font-size: 20px; } }
 
 @media (min-width: 0) {
   .page-footer {
