@@ -1,4 +1,7 @@
 @media (min-width: 0) {
+  $form_width: 573px;
+  $inner_right: 127px;
+
   @mixin form-field() {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.1);
@@ -23,22 +26,46 @@
     display: flex;
     justify-content: center;
     color: #ffffff;
-    background: $color-blue;
+    background-color: $color-blue;
   }
 
   .questions__bg {
+    $width: $desktop-container-width;
+    $diff1: "(100vw - #{$width}) / 2";
+    $diff2: "100vw - #{$width}";
     position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url("#{$prefix-css-img}paper-airplane@1x.png") calc(#{$diff1} + 110px) 161px no-repeat,
+      url("#{$prefix-css-img}triangles-desktop.svg") calc(#{$diff1} - 65px) -60px no-repeat,
+      url("#{$prefix-css-img}triangles-left-right.svg") calc(#{$diff1} + 1316px) 35px no-repeat;
+
+    @media (max-width: $desktop-container-width - 1) {
+      background: url("#{$prefix-css-img}paper-airplane@1x.png") calc(#{$diff2} + 110px) 161px no-repeat,
+        url("#{$prefix-css-img}triangles-desktop.svg") calc(#{$diff2} - 65px) -60px no-repeat,
+        url("#{$prefix-css-img}triangles-left-right.svg") calc(#{$diff1} + 1316px) 35px no-repeat;
+      background-size: 511px 288px, 671px 641px, 466px 670px;
+    }
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("#{$prefix-css-img}paper-airplane@2x.png"),
+        url("#{$prefix-css-img}triangles-desktop.svg"),
+        url("#{$prefix-css-img}triangles-left-right.svg");
+    }
+    background-size: 511px 288px, 671px 641px, 466px 670px;
   }
 
   .questions__inner {
     display: flex;
     justify-content: flex-end;
     width: $desktop-container-width;
-    padding: 91px 127px 73px 30px;
+    padding: 91px $inner_right 73px 30px;
   }
 
   .questions__inner form {
-    width: 573px;
+    width: $form_width;
     padding: 0 0 0 0;
   }
 
@@ -121,13 +148,8 @@
   }
 
   .questions__agreement {
-    position: relative;
     display: flex;
     width: 262px;
-  }
-
-  .questions__agreement input {
-    position: absolute;
   }
 
   .questions__agreement label {

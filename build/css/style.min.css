@@ -1257,9 +1257,24 @@ input[type="radio"].visually-hidden {
         -ms-flex-pack: center;
             justify-content: center;
     color: #ffffff;
-    background: #00b2ff; }
+    background-color: #00b2ff; }
   .questions__bg {
-    position: absolute; }
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../img/paper-airplane@1x.png") calc((100vw - 1440px) / 2 + 110px) 161px no-repeat, url("../img/triangles-desktop.svg") calc((100vw - 1440px) / 2 - 65px) -60px no-repeat, url("../img/triangles-left-right.svg") calc((100vw - 1440px) / 2 + 1316px) 35px no-repeat;
+    background-size: 511px 288px, 671px 641px, 466px 670px; } }
+  @media (min-width: 0) and (max-width: 1439px) {
+    .questions__bg {
+      background: url("../img/paper-airplane@1x.png") calc(100vw - 1440px + 110px) 161px no-repeat, url("../img/triangles-desktop.svg") calc(100vw - 1440px - 65px) -60px no-repeat, url("../img/triangles-left-right.svg") calc((100vw - 1440px) / 2 + 1316px) 35px no-repeat;
+      background-size: 511px 288px, 671px 641px, 466px 670px; } }
+  @media (min-width: 0) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (min-resolution: 144dpi), (min-width: 0) and (min-resolution: 1.5dppx) {
+    .questions__bg {
+      background-image: url("../img/paper-airplane@2x.png"), url("../img/triangles-desktop.svg"), url("../img/triangles-left-right.svg"); } }
+
+@media (min-width: 0) {
   .questions__inner {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1446,13 +1461,10 @@ input[type="radio"].visually-hidden {
     .questions__inner button:active {
       opacity: 0.3; }
   .questions__agreement {
-    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 262px; }
-  .questions__agreement input {
-    position: absolute; }
   .questions__agreement label {
     position: relative;
     padding: 11px 15px 5px 32px;
