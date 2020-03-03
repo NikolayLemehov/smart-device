@@ -1294,7 +1294,10 @@ input[type="radio"].visually-hidden {
     line-height: 51px; }
   .questions__sub-title {
     font-family: "PT Mono", "Arial", sans-serif;
-    margin: 0 0 53px 4px; }
+    margin: 0 0 53px 4px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px; }
   .questions__row {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1525,13 +1528,51 @@ input[type="radio"].visually-hidden {
   .questions__agreement label {
     padding: 11px 15px 5px 34px; }
   .questions__agreement label::before {
-    left: 0;
     top: 13px;
     width: 17px; } }
 
 @media (min-width: 0) and (max-width: 767px) {
+  .questions__inner {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 320px;
+    padding: 31px 15px 42px 12px; }
+  .questions__inner form {
+    width: 297px; }
   .questions__inner h2 {
-    font-size: 28px; } }
+    margin: 0 0 12px 3px;
+    font-size: 28px; }
+  .questions__sub-title {
+    margin: 0 0 26px 4px; }
+  .questions__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 0; }
+  .questions__name {
+    margin: 0 0 30px 0; }
+  .questions__name input {
+    width: 100%; }
+  .questions__phone {
+    margin: 0 0 30px 0; }
+  .questions__phone input {
+    width: 100%; }
+  .questions__question {
+    margin: 0 0 30px 0; }
+  .questions__question textarea {
+    min-height: 104px; }
+  .questions__inner button {
+    width: 100%;
+    margin: 0 0 30px 0; }
+  .questions__agreement label {
+    padding: 0 15px 0 34px; }
+  .questions__agreement label::before {
+    top: 1px; } }
 
 @media (min-width: 0) {
   .page-footer {
