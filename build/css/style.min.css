@@ -1276,6 +1276,7 @@ input[type="radio"].visually-hidden {
 
 @media (min-width: 0) {
   .questions__inner {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

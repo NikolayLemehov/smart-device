@@ -58,6 +58,7 @@
   }
 
   .questions__inner {
+    position: relative;
     display: flex;
     justify-content: flex-end;
     width: $desktop-container-width;
