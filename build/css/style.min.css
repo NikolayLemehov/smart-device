@@ -1287,7 +1287,7 @@ input[type="radio"].visually-hidden {
   .questions__inner form {
     width: 573px;
     padding: 0 0 0 0; }
-  .questions h2 {
+  .questions__inner h2 {
     margin: 0 0 12px 0;
     font-weight: normal;
     font-size: 36px;
@@ -1487,6 +1487,51 @@ input[type="radio"].visually-hidden {
     border: 1px solid #ffffff; }
   .questions__agreement input:checked + label::before {
     background: url("../img/check-mark.svg") no-repeat 3px 4px; } }
+
+@media (min-width: 0) and (max-width: 1023px) {
+  .questions__bg {
+    display: none; }
+  .questions__inner {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 770px;
+    padding: 80px 28px 62px 30px; }
+  .questions__inner form {
+    width: 594px; }
+  .questions__inner h2 {
+    margin: 0 0 19px 0;
+    font-size: 32px;
+    line-height: 140.62%; }
+  .questions__sub-title {
+    margin: 0 0 56px 4px; }
+  .questions__row {
+    margin: 0 0 41px 0; }
+  .questions__name input {
+    width: 280px;
+    height: 52px; }
+  .questions__phone input {
+    width: 279px;
+    height: 52px; }
+  .questions__question textarea {
+    min-height: 160px;
+    padding: 13px 17px; }
+  .questions__inner button {
+    margin: 3px 0 0 0;
+    width: 280px;
+    min-height: 47px; }
+  .questions__agreement {
+    width: 272px; }
+  .questions__agreement label {
+    padding: 11px 15px 5px 34px; }
+  .questions__agreement label::before {
+    left: 0;
+    top: 13px;
+    width: 17px; } }
+
+@media (min-width: 0) and (max-width: 767px) {
+  .questions__inner h2 {
+    font-size: 28px; } }
 
 @media (min-width: 0) {
   .page-footer {
