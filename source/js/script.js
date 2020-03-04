@@ -129,3 +129,18 @@ var backspaceKeyCode = 8;
     }
   });
 })();
+
+var anchors = document.querySelectorAll('a.scroll-to');
+
+anchors.forEach(function (anchor) {
+  anchor.addEventListener('click', function (evt) {
+    evt.preventDefault();
+
+    var blockID = anchor.getAttribute('href');
+
+    document.querySelector(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+});
