@@ -130,7 +130,7 @@
     padding: 13px 16px;
   }
 
-  .questions__inner button {
+  .questions__submit button {
     width: 270px;
     margin: 3px 0 0 0;
     padding: 0 20px;
@@ -148,6 +148,7 @@
 
     &:hover {
       opacity: 0.6;
+      cursor: pointer;
     }
 
     &:active {
@@ -171,6 +172,7 @@
 
     &:hover::before {
       opacity: 0.6;
+      cursor: pointer;
     }
 
     &:active::before {
@@ -236,7 +238,7 @@
       padding: 13px 17px;
     }
 
-    .questions__inner button {
+    .questions__submit button {
       margin: 3px 0 0 0;
       width: 280px;
       min-height: 47px;
@@ -306,7 +308,7 @@
       min-height: 104px;
     }
 
-    .questions__inner button {
+    .questions__submit button {
       width: 100%;
       margin: 0 0 30px 0;
     }
@@ -318,5 +320,107 @@
     .questions__agreement label::before {
       top: 1px;
     }
+  }
+
+  .questions--popup {
+    position: fixed;
+    display: none;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .questions--popup .questions__inner {
+    position: absolute;
+    top: 136px;
+    width: 490px;
+    height: 605px;
+    padding: 30px 39px 5px 36px;
+    background-color: $color-blue;
+  }
+
+  .questions--popup .questions__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    padding: 0;
+    background: url("#{$prefix-css-img}close.svg") no-repeat 0 0;
+    border: none;
+
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  .questions--popup h2 {
+    margin: 0 0 12px 4px;
+    font-size: 28px;
+    line-height: 140.62%;
+  }
+
+  .questions--popup .questions__sub-title {
+    margin: 0 0 32px 4px;
+  }
+
+  .questions--popup .questions__row {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .questions--popup .questions__name {
+    margin: 0 0 30px 0;
+  }
+
+  .questions--popup .questions__name input {
+    width: 100%;
+    height: 52px;
+    padding: 14px 25px 20px;
+  }
+
+  .questions--popup .questions__phone {
+    margin: 0 0 30px 0;
+  }
+
+  .questions--popup .questions__phone input {
+    width: 100%;
+    height: 52px;
+    padding: 14px 25px 20px;
+  }
+
+  .questions--popup .questions__question {
+    margin: 0 0 30px 0;
+  }
+
+  .questions--popup .questions__question textarea {
+    width: 100%;
+    min-height: auto;
+    height: 104px;
+    padding: 14px 25px 20px;
+  }
+
+  .questions--popup .questions__submit button {
+    width: 100%;
+    margin: 0 0 23px 0;
+    min-height: auto;
+    height: 47px;
+  }
+
+  .questions--popup .questions__agreement {
+    width: 100%;
+  }
+
+  .questions--popup .questions__agreement label {
+    padding: 11px 15px 5px 49px;
   }
 }
