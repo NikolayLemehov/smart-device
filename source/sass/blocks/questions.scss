@@ -109,6 +109,10 @@
     padding: 0 16px 6px;
   }
 
+  .questions__phone--no-match input {
+    background: rgba(255, 0, 0, 0.5);
+  }
+
   .questions__question {
     width: 100%;
   }

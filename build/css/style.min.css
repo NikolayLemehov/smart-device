@@ -1395,6 +1395,8 @@ input[type="radio"].visually-hidden {
       opacity: 0.6; }
     .questions__phone input:focus::placeholder {
       opacity: 0.6; }
+  .questions__phone--no-match input {
+    background: rgba(255, 0, 0, 0.5); }
   .questions__question {
     width: 100%; }
   .questions__question label {
