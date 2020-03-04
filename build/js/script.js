@@ -83,42 +83,45 @@ var backspaceKeyCode = 8;
     }
   };
 
-  var findStringMatch = function (matchResult) {
-    return matchResult ? matchResult[0] : null;
-  };
-  phoneInput.addEventListener('focus', function () {
-    if (phoneInput.value === '') {
-      phoneInput.value = '+7(';
-    }
-  });
-
-  phoneInput.addEventListener('change', function () {
-    validatePhone();
-  });
-
-  phoneInput.addEventListener('keyup', function (evt) {
-    var string = phoneInput.value;
-    if (evt.keyCode === backspaceKeyCode &&
-      string.match(/\+7\(\d{3}/) &&
-      !string.match(/\+7\(\d{3}\)\d*/)) {
-      phoneInput.value = string.slice(0, -1);
-      return;
-    }
-
-    if (findStringMatch(string.match(/\+7\(\d{3}/)) === string) {
-      phoneInput.value = string + ')';
-    }
-
-    if (findStringMatch(string.match(/(\+7\((\d){3}\)?(\d){0,7})|\+7\((\d){0,3}/)) === string) {
-      if (questionsPhone.classList.contains('questions__phone--no-match')) {
-        questionsPhone.classList.remove('questions__phone--no-match');
+  var subscribePhoneEvents = function () {
+    var findStringMatch = function (matchResult) {
+      return matchResult ? matchResult[0] : null;
+    };
+    phoneInput.addEventListener('focus', function () {
+      if (phoneInput.value === '') {
+        phoneInput.value = '+7(';
       }
-    } else {
-      questionsPhone.classList.add('questions__phone--no-match');
-      phoneInput.setCustomValidity('Номер телефона должен соответствовать следующий маске +7(000)0000000');
-    }
-  });
+    });
 
+    phoneInput.addEventListener('change', function () {
+      validatePhone();
+    });
+
+    phoneInput.addEventListener('keyup', function (evt) {
+      var string = phoneInput.value;
+      if (evt.keyCode === backspaceKeyCode &&
+        string.match(/\+7\(\d{3}/) &&
+        !string.match(/\+7\(\d{3}\)\d*/)) {
+        phoneInput.value = string.slice(0, -1);
+        return;
+      }
+
+      if (findStringMatch(string.match(/\+7\(\d{3}/)) === string) {
+        phoneInput.value = string + ')';
+      }
+
+      if (findStringMatch(string.match(/(\+7\((\d){3}\)?(\d){0,7})|\+7\((\d){0,3}/)) === string) {
+        if (questionsPhone.classList.contains('questions__phone--no-match')) {
+          questionsPhone.classList.remove('questions__phone--no-match');
+        }
+      } else {
+        questionsPhone.classList.add('questions__phone--no-match');
+        phoneInput.setCustomValidity('Номер телефона должен соответствовать следующий маске +7(000)0000000');
+      }
+    });
+  };
+
+  subscribePhoneEvents();
   submitBtn.addEventListener('click', function (evt) {
     validatePhone();
     if (form.checkValidity()) {
