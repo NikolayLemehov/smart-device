@@ -78,8 +78,8 @@ var KeyCode = {
       if (foundMatch === string) {
         if (questionsPhone.classList.contains('questions__phone--no-match')) {
           questionsPhone.classList.remove('questions__phone--no-match');
-          phoneInput.setCustomValidity('');
         }
+        phoneInput.setCustomValidity('');
       } else {
         questionsPhone.classList.add('questions__phone--no-match');
         phoneInput.setCustomValidity('Номер телефона должен соответствовать следующий маске +7(000)0000000');
