@@ -1467,10 +1467,14 @@ input[type="radio"].visually-hidden {
     .questions__submit button:active {
       opacity: 0.3; }
   .questions__agreement {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 262px; }
+  .questions__agreement input {
+    left: 9px;
+    top: 32px; }
   .questions__agreement label {
     position: relative;
     padding: 11px 15px 5px 32px;
