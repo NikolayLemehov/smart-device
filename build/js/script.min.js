@@ -172,11 +172,13 @@ var KeyCode = {
     }
   };
   var showPopup = function () {
+    document.documentElement.style.overflow = 'hidden';
     popup.style.display = 'flex';
     document.addEventListener('keydown', onDocumentPopupEscKeyDown);
     window.addEventListener('click', onClickOutsideForm);
   };
   var closePopup = function () {
+    document.documentElement.style.overflow = '';
     popup.style.display = 'none';
     document.removeEventListener('keydown', onDocumentPopupEscKeyDown);
     window.removeEventListener('click', onClickOutsideForm);
