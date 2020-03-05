@@ -70,6 +70,9 @@ var KeyCode = {
     var questionsPhone = form.querySelector('.questions__phone');
     var phoneInput = questionsPhone.querySelector('input');
     var submitBtn = form.querySelector('button[type="submit"]');
+    if (!questionsPhone || !phoneInput || !submitBtn) {
+      return;
+    }
 
     var validatePhone = function () {
       var string = phoneInput.value;
@@ -143,6 +146,9 @@ var KeyCode = {
   var showBtn = document.querySelector('.main-nav__recall a');
 
   var popupTemplate = document.querySelector('#questions-popup').content.querySelector('.questions--popup');
+  if (!showBtn || !popupTemplate) {
+    return;
+  }
   var addPopup = function () {
     var element = popupTemplate.cloneNode(true);
     element.style.display = 'none';
@@ -152,6 +158,9 @@ var KeyCode = {
   var popup = addPopup();
   var form = popup.querySelector('form');
   var closeBtn = popup.querySelector('.questions__close');
+  if (!popup || !form || !closeBtn) {
+    return;
+  }
   var onDocumentPopupEscKeyDown = function (evt) {
     if (evt.keyCode === KeyCode.ESC) {
       closePopup();
