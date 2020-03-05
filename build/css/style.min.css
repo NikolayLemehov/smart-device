@@ -1481,9 +1481,10 @@ input[type="radio"].visually-hidden {
     font-size: 14px;
     line-height: 16px;
     color: rgba(255, 255, 255, 0.8); }
-    .questions__agreement label:hover::before {
-      opacity: 0.6;
+    .questions__agreement label:hover {
       cursor: pointer; }
+    .questions__agreement label:hover::before {
+      opacity: 0.6; }
     .questions__agreement label:active::before {
       opacity: 0.3; }
   .questions__agreement label::before {
