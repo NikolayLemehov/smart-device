@@ -64,27 +64,38 @@ var KeyCode = {
   activeFooterSection(outContactsToggle);
 })();
 
+var QuestionsSection = function (form) {
+  this.form = form;
+  this.questionsPhone = form.querySelector('.questions__phone');
+  this.submitBtn = form.querySelector('button[type="submit"]');
+  this.name = form.querySelector('[name="name"]');
+  this.phone = form.querySelector('[name="phone"]');
+  this.question = form.querySelector('[name="question"]');
+  this.isAllExisting = this.form && this.questionsPhone && this.submitBtn &&
+    this.name && this.phone && this.question;
+};
 // questions
 (function () {
-  var validateQuestions = function (form) {
-    var questionsPhone = form.querySelector('.questions__phone');
-    var phoneInput = questionsPhone.querySelector('input');
-    var submitBtn = form.querySelector('button[type="submit"]');
-
-    var validatePhone = function () {
-      var string = phoneInput.value;
-      var result = string.match(/\+7\(\d{3}\)\d{7}/);
-      var foundMatch = result ? result[0] : null;
-      if (foundMatch === string) {
-        if (questionsPhone.classList.contains('questions__phone--no-match')) {
-          questionsPhone.classList.remove('questions__phone--no-match');
-          phoneInput.setCustomValidity('');
-        }
-      } else {
-        questionsPhone.classList.add('questions__phone--no-match');
-        phoneInput.setCustomValidity('Номер телефона должен соответствовать следующий маске +7(000)0000000');
+  var validatePhone = function (section) {
+    var questionsPhone = section.questionsPhone;
+    var phoneInput = section.phone;
+    var string = phoneInput.value;
+    var result = string.match(/\+7\(\d{3}\)\d{7}/);
+    var foundMatch = result ? result[0] : null;
+    if (foundMatch === string) {
+      if (questionsPhone.classList.contains('questions__phone--no-match')) {
+        questionsPhone.classList.remove('questions__phone--no-match');
       }
-    };
+      phoneInput.setCustomValidity('');
+    } else {
+      questionsPhone.classList.add('questions__phone--no-match');
+      phoneInput.setCustomValidity('Номер телефона должен соответствовать следующий маске +7(000)0000000');
+    }
+  };
+  var validateQuestions = function (section) {
+    var questionsPhone = section.questionsPhone;
+    var phoneInput = section.phone;
+
 
     var subscribePhoneEvents = function () {
       var findStringMatch = function (matchResult) {
@@ -97,7 +108,7 @@ var KeyCode = {
       });
 
       phoneInput.addEventListener('change', function () {
-        validatePhone();
+        validatePhone(section);
       });
 
       phoneInput.addEventListener('keyup', function (evt) {
@@ -125,39 +136,98 @@ var KeyCode = {
     };
 
     subscribePhoneEvents();
-    submitBtn.addEventListener('click', function (evt) {
-      validatePhone();
-      if (form.checkValidity()) {
-        evt.preventDefault();
-      }
-    });
   };
-  var formCollection = document.querySelectorAll('.questions__inner form');
-  formCollection.forEach(function (it) {
-    validateQuestions(it);
+  var section = new QuestionsSection(document.querySelector('main .questions__inner form'));
+  if (!section.isAllExisting) {
+    return;
+  }
+  section.submitBtn.addEventListener('click', function (evt) {
+    validatePhone(section);
+    if (section.form.checkValidity()) {
+      evt.preventDefault();
+    }
   });
+  validateQuestions(section);
+
+  window.validateQuestions = validateQuestions;
+  window.questions = {
+    validate: validateQuestions,
+    validatePhone: validatePhone,
+  };
 })();
 
 // popup
 (function () {
   var showBtn = document.querySelector('.main-nav__recall a');
-  var popup = document.querySelector('.questions--popup');
+
+  var popupTemplate = document.querySelector('#questions-popup').content.querySelector('.questions--popup');
+  if (!showBtn || !popupTemplate) {
+    return;
+  }
+  var addPopup = function () {
+    var element = popupTemplate.cloneNode(true);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    return document.body.querySelector('.questions--popup');
+  };
+  var popup = addPopup();
   var form = popup.querySelector('form');
-  var closeBtn = form.querySelector('.questions__close');
+  var closeBtn = popup.querySelector('.questions__close');
+  if (!popup || !form || !closeBtn) {
+    return;
+  }
+  var section = new QuestionsSection(form);
+  if (!section.isAllExisting) {
+    return;
+  }
+  var storage = {
+    name: '',
+    phone: '',
+    question: '',
+    isSupport: true,
+  };
+
+  try {
+    storage.name = localStorage.getItem('nameField');
+    storage.phone = localStorage.getItem('phoneField');
+    storage.question = localStorage.getItem('questionField');
+  } catch (err) {
+    storage.isSupport = false;
+  }
 
   var onDocumentPopupEscKeyDown = function (evt) {
     if (evt.keyCode === KeyCode.ESC) {
       closePopup();
     }
   };
+  var onClickOutsideForm = function (evt) {
+    if (evt.target.classList.contains('questions--popup')) {
+      closePopup();
+    }
+  };
   var showPopup = function () {
+    document.documentElement.style.overflow = 'hidden';
     popup.style.display = 'flex';
+    if (storage.name) {
+      section.name.value = storage.name;
+    }
+    if (storage.phone) {
+      section.phone.value = storage.phone;
+    }
+    if (storage.question) {
+      section.question.value = storage.question;
+    }
+    section.name.focus();
     document.addEventListener('keydown', onDocumentPopupEscKeyDown);
+    window.addEventListener('click', onClickOutsideForm);
   };
   var closePopup = function () {
+    document.documentElement.style.overflow = '';
     popup.style.display = 'none';
     document.removeEventListener('keydown', onDocumentPopupEscKeyDown);
+    window.removeEventListener('click', onClickOutsideForm);
   };
+  window.questions.validate(section);
   closeBtn.addEventListener('click', function (evt) {
     evt.preventDefault();
     closePopup();
@@ -166,7 +236,17 @@ var KeyCode = {
     evt.preventDefault();
     showPopup();
   });
-
+  section.submitBtn.addEventListener('click', function (evt) {
+    window.questions.validatePhone(section);
+    if (section.form.checkValidity()) {
+      evt.preventDefault();
+      if (storage.isSupport) {
+        localStorage.setItem('nameField', section.name.value);
+        localStorage.setItem('phoneField', section.phone.value);
+        localStorage.setItem('questionField', section.question.value);
+      }
+    }
+  });
 })();
 
 // smooth scroll
