@@ -60,9 +60,6 @@
 
   .main-screen__inner {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     width: $desktop-container-width;
     padding: 200px 18px 275px 18px;
   }
