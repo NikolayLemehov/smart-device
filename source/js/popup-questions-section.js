@@ -1,5 +1,5 @@
 import QuestionsSection from './questions-section';
-import {KeyCode} from './utils';
+import {KeyCode, getScrollbarWidth} from './utils';
 
 export default class PopupQuestionsSection extends QuestionsSection {
   constructor(section, showBtn) {
@@ -52,6 +52,7 @@ export default class PopupQuestionsSection extends QuestionsSection {
 
   _showPopup(storage) {
     document.documentElement.style.overflow = `hidden`;
+    document.documentElement.style.paddingRight = `${getScrollbarWidth()}px`;
     this.section.style.display = `flex`;
     if (storage.name) {
       this.name.value = storage.name;
@@ -69,6 +70,7 @@ export default class PopupQuestionsSection extends QuestionsSection {
 
   _closePopup() {
     document.documentElement.style.overflow = ``;
+    document.documentElement.style.paddingRight = ``;
     this.section.style.display = `none`;
     document.removeEventListener(`keydown`, this._onDocumentPopupEscKeyDown);
     window.removeEventListener(`click`, this._onClickOutsideForm);
