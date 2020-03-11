@@ -187,8 +187,8 @@
   @media (max-width: $tablet-width - 1) {
     .main-screen__bg {
       $width: $tablet-width;
-      background: url("#{$prefix-css-img}motherboard-mobile@1x.png") calc((100vw - #{$width}) / 2 + 250px) 39px no-repeat,
-        url("#{$prefix-css-img}triangles-mobile.svg") calc((100vw - #{$width}) / 2 + 376px) -99px no-repeat;
+      background: url("#{$prefix-css-img}motherboard-mobile@1x.png") calc((100vw - #{$width}) / 2 + 241px) 39px no-repeat,
+        url("#{$prefix-css-img}triangles-mobile.svg") calc((100vw - #{$width}) / 2 + 367px) -99px no-repeat;
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image: url("#{$prefix-css-img}motherboard@2x.png"),
