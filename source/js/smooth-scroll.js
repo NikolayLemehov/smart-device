@@ -1,21 +1,42 @@
-import smoothscroll from 'smoothscroll-polyfill';
-
-smoothscroll.polyfill();
 const activeSmoothScroll = () => {
   const anchors = document.querySelectorAll(`a.scroll-to`);
+  if (typeof NodeList.prototype.forEach !== `function`) {
+    NodeList.prototype.forEach = Array.prototype.forEach;
+  }
 
-  Array.from(anchors).forEach(function (anchor) {
-    anchor.addEventListener(`click`, function (evt) {
+  anchors.forEach((anchor) => {
+    anchor.addEventListener(`click`, (evt) => {
       evt.preventDefault();
 
       const blockID = anchor.getAttribute(`href`);
+      const target = document.querySelector(blockID);
 
-      document.querySelector(blockID).scrollIntoView({
-        behavior: `smooth`,
-        block: `start`
-      });
+      doScrolling(target.getBoundingClientRect().top, 800);
     });
   });
 };
 
+const doScrolling = (elementY, duration) => {
+  const startingY = window.pageYOffset;
+  const diff = elementY - startingY;
+  let start;
+
+  // Bootstrap our animation - it will get called right before next frame shall be rendered.
+  window.requestAnimationFrame(function step(timestamp) {
+    if (!start) {
+      start = timestamp;
+    }
+    // Elapsed milliseconds since start of scrolling.
+    const time = timestamp - start;
+    // Get percent of completion in range [0, 1].
+    const percent = Math.min(time / duration, 1);
+
+    window.scrollTo(0, startingY + diff * percent);
+
+    // Proceed with animation as long as we wanted it to.
+    if (time < duration) {
+      window.requestAnimationFrame(step);
+    }
+  });
+};
 export {activeSmoothScroll};
