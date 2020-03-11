@@ -98,7 +98,7 @@
   }
 
   .main-screen__inner > a {
-    display: block;
+    display: inline-block;
     max-width: $column-width - $left-indent;
     min-height: 55px;
     margin-left: $left-indent;
